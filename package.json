@@ -1,0 +1,23 @@
+{
+  "name": "iotmonitor",
+  "version": "1.0.0",
+  "description": "Monitor the execution of node.js programs on iotdevices",
+  "main": "./build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./app -d build",
+    "build:watch": "babel ./app -d build --watch"
+  },
+  "author": "Daniel Krajnak",
+  "license": "ISC",
+  "dependencies": {
+    "azure-iot-device": "^1.4.1",
+    "azure-iot-device-mqtt": "^1.4.1",
+    "npm": "^5.8.0",
+    "path": "^0.12.7",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1"
+  }
+}
