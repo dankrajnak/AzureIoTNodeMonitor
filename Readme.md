@@ -7,7 +7,7 @@ Run and monitor multiple node scripts using Azure IoT Hub.
 ```Javascript
 new IoTMonitor([connectionString])
 ```
-* `connectionString {string}` — the device connection string to connect with the Azure IoT Hub.  Learn how to to connect your device to Azure [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-device-management-get-started)
+* `connectionString {string}` — the device connection string to connect with the Azure IoT Hub.  Learn how to to connect your device to Azure [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-device-management-get-started).  If no connection string is provided, IoTMonitor will check environment variables.
 
 ### Methods
 ```javascript
