@@ -19,7 +19,9 @@ var ConnectionString = require('azure-iot-device').ConnectionString;
 var Message = require('azure-iot-device').Message;
 var Protocol = require('azure-iot-device-mqtt').Mqtt;
 
-var config;
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+}
 
 var IoTMonitor = function () {
   function IoTMonitor() {
@@ -35,7 +37,9 @@ var IoTMonitor = function () {
   }
 
   /**
-   * Javascript proceses to be run in the background must be in their own file.
+   * Listens for an `eventName` device method.  Once received, create a new instance
+   * of node running in a seperate process and run `fileName`. All output from
+   * that process will be sent to the IoTHub as an event.
    *
    * @param {string} eventName Name of event to listen to from the IotHub
    * @param {string} fileName  Relative path to the javascript file
@@ -58,9 +62,12 @@ var IoTMonitor = function () {
     }
 
     /**
-     * [addSameThreadMethodListener description]
-     * @param {string} eventName [description]
-     * @param {function} method    [description]
+     * Listens for an `eventName` device method.  Once received, runs the provided
+     * method in the same thread as the IoT Monitor.  This is meant for short methods
+     * and avoids the creation of a separate process.  Consider, though, that while
+     * the method is running, IoTMonitor will be unresponsive.
+     * @param {string} eventName  name of the device method to listen for
+     * @param {function} method    method to run on reciept of the eventName
      */
 
   }, {
@@ -78,6 +85,13 @@ var IoTMonitor = function () {
         return _this2._runSameThreadCallBack(res, req, method);
       });
     }
+
+    /**
+     * Connect to Azure IoTHub
+     * @return {Promise} A promise that resolves when successfully connected, and
+     *  rejects with any errors encountered.
+     */
+
   }, {
     key: 'connect',
     value: function connect() {
@@ -103,10 +117,12 @@ var IoTMonitor = function () {
     }
 
     /**
+     * Run a method on the same thread as the IoTMonitor.
      * Meant for simple, synchronous methods which quickly terminate.
-     * @param  {[type]} method [description]
-     * @param  {[type]} args   [description]
-     * @return {[type]}        [description]
+     * Avoids creating another Node instance.
+     *
+     * @param  {function} method method to be run on the same thread.
+     * @param  {Array} args   Parameters to be passed into the method.
      */
 
   }, {
@@ -115,18 +131,15 @@ var IoTMonitor = function () {
       var _arguments = arguments,
           _this4 = this;
 
-      /* Re-write console.log.
-       This might be a really stupid way to do this.
-       It also won't work if the method is asynchronous.  It will revert
-       console.log before those methods run. */
+      // Re-write console.log.
+      // This might be a really stupid way to do this.
+      // It also won't work if the method is asynchronous.  It will revert
+      // console.log before those methods run.
       var consoleLog = console.log;
       console.log = function () {
         var logs = _arguments;
         if (_this4.connected) {
-          _this4.client.sendEvent(new Message({
-            message: 'Log from ' + method.name,
-            data: logs
-          }));
+          _this4.client.sendEvent(new Message('Log from ' + method.name + ': ' + logs));
         }
         consoleLog(_arguments);
       };
@@ -134,16 +147,20 @@ var IoTMonitor = function () {
         method.apply(undefined, _toConsumableArray(args));
       } catch (e) {
         if (this.connected) {
-          this.client.sendEvent(new Message({
-            message: 'Error in ' + method.name,
-            data: e
-          }));
+          this.client.sendEvent(new Message('Error in ' + method.name + ': ' + e));
           consoleLog(e);
         }
       } finally {
         console.log = consoleLog;
       }
     }
+
+    /**
+     * Creates a new instance of node and runs the fileName on this new instance.
+     * Reports any output of this process to the Azure IoTHub.
+     * @param  {string} fileName absolute path to the node script to be forked.
+     */
+
   }, {
     key: 'forkProcess',
     value: function forkProcess(fileName) {
@@ -152,7 +169,9 @@ var IoTMonitor = function () {
       if (!this.connected) {
         console.error('Client not connected while forking process');
       } else {
-        this.client.sendEvent(new Message({ message: 'Forking ' + fileName }));
+        console.log('Here');
+        this.client.sendEvent(new Message('Forking ' + fileName));
+        console.log('And there');
       }
 
       var forked = void 0;
@@ -161,10 +180,7 @@ var IoTMonitor = function () {
         forked = fork(fileName, [], { silent: true });
       } catch (error) {
         if (this.connected) {
-          this.client.sendEvent(new Message({
-            message: 'Error forking ' + fileName,
-            data: error
-          }));
+          this.client.sendEvent(new Message('Error forking ' + fileName + ": " + error));
         }
         console.error('Error forking ' + fileName, error);
         return false;
@@ -172,10 +188,7 @@ var IoTMonitor = function () {
 
       forked.on('error', function (error) {
         if (_this5.connected) {
-          _this5.client.sendEvent(new Message({
-            message: 'Error forking ' + fileName,
-            data: error.toString()
-          }), function (err) {
+          _this5.client.sendEvent(new Message('Error forking ' + fileName + ': ' + error.toString()), function (err) {
             return IoTMonitor._handleMessageSendError;
           });
         }
@@ -190,31 +203,22 @@ var IoTMonitor = function () {
 
       forked.on('exit', function (code, signal) {
         if (_this5.connected) {
-          _this5.client.sendEvent(new Message({
-            message: fileName + ' ended',
-            data: error.toString()
-          }), function (err) {
+          _this5.client.sendEvent(new Message(fileName + ' ended on code ' + code), function (err) {
             return IoTMonitor._handleMessageSendError;
           });
         }
-        console.log(fileName + 'ended');
+        console.log(fileName + ' ended');
       });
 
       if (this.connected) {
         forked.stdout.on('data', function (data) {
-          _this5.client.sendEvent(new Message({
-            message: 'Message from ' + fileName,
-            data: data.toString()
-          }), function (err) {
+          _this5.client.sendEvent(new Message('Message from ' + fileName + ': ' + data.toString()), function (err) {
             return IoTMonitor._handleMessageSendError;
           });
         });
 
         forked.stderr.on('data', function (data) {
-          _this5.client.sendEvent(new Message({
-            message: 'Error in ' + fileName,
-            data: data.toString()
-          }), function (err) {
+          _this5.client.sendEvent(new Message('Error in ' + fileName + ': ' + data.toString), function (err) {
             return IoTMonitor._handleMessageSendError;
           });
         });
