@@ -3,6 +3,7 @@ const Client = require('azure-iot-device').Client;
 const ConnectionString = require('azure-iot-device').ConnectionString;
 const Message = require('azure-iot-device').Message;
 const Protocol = require('azure-iot-device-mqtt').Mqtt;
+const path = require('path');
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
@@ -26,12 +27,27 @@ export default class IoTMonitor{
    * @param {string} fileName  Relative path to the javascript file
    */
   addRunInBackgroundListener(eventName, fileName){
+    if(!this.connected){
+      throw new Error('Client is not connected while trying to add background listener');
+      return;
+    }
+
     this.methodListeners.push({
       type: 'background',
       eventName: eventName,
       fileName: fileName
     });
     this.client.onDeviceMethod(eventName, (res, req)=>this._forkProcessCallback(res, req, fileName));
+
+    //Update device twin
+    this.updateDeviceTwin({
+      listeners: {
+        [eventName]: {
+          type: 'background',
+          fileName: fileName
+        }
+      }
+    });
   }
 
   /**
@@ -43,6 +59,11 @@ export default class IoTMonitor{
    * @param {function} method    method to run on reciept of the eventName
    */
   addSameThreadMethodListener(eventName, method){
+    if(!this.connected){
+      throw new Error('Client is not connected while trying to add same thread listener');
+      return;
+    }
+
     this.methodListeners.push({
       type: 'same thread',
       eventNamae: eventName,
@@ -51,6 +72,13 @@ export default class IoTMonitor{
 
     this.client.onDeviceMethod(eventName, (res, req)=>this._runSameThreadCallBack(res, req, method));
 
+    //Update device twin
+    this.updateDeviceTwin({
+      listeners:{
+        type: 'same thread',
+        methodName: method.name
+      }
+    });
   }
 
   /**
@@ -78,6 +106,53 @@ export default class IoTMonitor{
     })
   }
 
+  clearDeviceTwin(){
+    return new Promise((res, rej)=>{
+      if(!this.connected){
+        rej("Must be connected to clear device twin.");
+      }
+      this.client.getTwin((err, twin)=>{
+        if(err){
+          rej(err);
+        } else{
+          let patch = {};
+          for (let prop in twin.properties.reported){
+            patch[prop] = null;
+          }
+          delete patch.update
+          delete patch.$version
+
+          twin.properties.reported.update(patch, (err)=>{
+            if(err){
+              rej(err);
+            }
+            res();
+          });
+        }
+      })
+    })
+  }
+
+  updateDeviceTwin(obj){
+    return new Promise((res, rej)=>{
+      if(!this.connected){
+        rej("Must be connected to update device twin")
+      }
+      this.client.getTwin((err, twin)=>{
+        if(err){
+          rej(err);
+        } else{
+          twin.properties.reported.update(obj, (err)=>{
+            if(err){
+              rej(err);
+            }
+            res();
+          })
+        }
+      })
+    })
+  }
+
   /**
    * Run a method on the same thread as the IoTMonitor.
    * Meant for simple, synchronous methods which quickly terminate.
@@ -87,28 +162,42 @@ export default class IoTMonitor{
    * @param  {Array} args   Parameters to be passed into the method.
    */
   runOnSameThread(method, args){
-   // Re-write console.log.
-   // This might be a really stupid way to do this.
-   // It also won't work if the method is asynchronous.  It will revert
-   // console.log before those methods run.
-    let consoleLog = console.log;
-    console.log = ()=>{
-      let logs = arguments;
-      if(this.connected){
-        this.client.sendEvent(new Message(`Log from ${method.name}: ${logs}`));
+
+    //Update device twin
+    this.updateDeviceTwin({
+      runningOnThread: method.name,
+      encounteredError: {
+        [method.name]: null
       }
-      consoleLog(arguments);
-    }
-    try {
-      method(...args);
-    } catch (e) {
-      if(this.connected){
-        this.client.sendEvent(new Message(`Error in ${method.name}: ${e}`));
-        consoleLog(e);
-      }
-    } finally{
-      console.log = consoleLog;
-    }
+    }).then(()=>{
+
+      // Re-write console.log.
+      // This might be a really stupid way to do this.
+      // It also won't work if the method is asynchronous.  It may revert
+      // console.log before those callbacks run.
+       let consoleLog = console.log;
+       console.log = ()=>{
+         let logs = arguments;
+         if(this.connected){
+           this.client.sendEvent(new Message(`Log from ${method.name}: ${logs}`));
+         }
+         consoleLog(arguments);
+       }
+       try {
+         method(...args);
+       } catch (e) {
+         if(this.connected){
+           this.client.sendEvent(new Message(`Error in ${method.name}: ${e}`));
+           consoleLog(e);
+           //Update device twin
+
+         }
+       } finally{
+         console.log = consoleLog;
+         //Update device twin
+
+       }
+    }).catch((e)=>console.error(e))
   }
 
   /**
@@ -120,9 +209,7 @@ export default class IoTMonitor{
     if(!this.connected){
       console.error('Client not connected while forking process');
     } else{
-      console.log('Here');
       this.client.sendEvent(new Message('Forking '+fileName));
-      console.log('And there');
     }
 
     let forked;
@@ -138,12 +225,24 @@ export default class IoTMonitor{
       return false;
     }
 
+    //Update device twin
+    // TODO add something better to store in each property.
+    this.updateDeviceTwin({
+      runningInBackground: { [path.basename(fileName, '.js')]: fileName},
+      encounteredError: { [path.basename(fileName, '.js')]: null}
+    })
+
     forked.on('error', (error)=>{
       if(this.connected){
         this.client.sendEvent(new Message(`Error forking ${fileName}: ${error.toString()}`),
          (err)=>IoTMonitor._handleMessageSendError);
       }
       console.error('Error forking '+ fileName, error)
+      this.updateDeviceTwin({
+        runningInBackground: {
+          [path.basename(fileName, '.js')]: null
+        }
+      })
       return false;
     })
 
@@ -158,6 +257,11 @@ export default class IoTMonitor{
           (err)=>IoTMonitor._handleMessageSendError);
       }
       console.log(fileName + ' ended');
+      this.updateDeviceTwin({
+        runningInBackground: {
+          [path.basename(fileName, '.js')]: null
+        }
+      })
     })
 
     if(this.connected){
@@ -169,6 +273,11 @@ export default class IoTMonitor{
       forked.stderr.on('data', (data)=>{
         this.client.sendEvent(new Message(`Error in ${fileName}: ${data.toString}`),
          (err)=>IoTMonitor._handleMessageSendError)
+        this.updateDeviceTwin({
+          encounteredError:{
+            [path.basename(fileName, '.js')]: fileName
+          }
+        })
       });
     }
     return true;

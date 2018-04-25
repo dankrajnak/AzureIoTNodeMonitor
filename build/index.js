@@ -8,5 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var monitor = new _IoTMonitor2.default();
 monitor.connect().then(function () {
+  monitor.clearDeviceTwin();
+  monitor.addRunInBackgroundListener('repeat', 'build/repeater.js');
   monitor.forkProcess('build/repeater.js');
 });

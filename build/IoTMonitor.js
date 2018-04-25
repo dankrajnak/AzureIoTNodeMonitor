@@ -8,6 +8,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var _require = require('child_process'),
@@ -18,6 +20,7 @@ var Client = require('azure-iot-device').Client;
 var ConnectionString = require('azure-iot-device').ConnectionString;
 var Message = require('azure-iot-device').Message;
 var Protocol = require('azure-iot-device-mqtt').Mqtt;
+var path = require('path');
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
@@ -51,6 +54,11 @@ var IoTMonitor = function () {
     value: function addRunInBackgroundListener(eventName, fileName) {
       var _this = this;
 
+      if (!this.connected) {
+        throw new Error('Client is not connected while trying to add background listener');
+        return;
+      }
+
       this.methodListeners.push({
         type: 'background',
         eventName: eventName,
@@ -58,6 +66,14 @@ var IoTMonitor = function () {
       });
       this.client.onDeviceMethod(eventName, function (res, req) {
         return _this._forkProcessCallback(res, req, fileName);
+      });
+
+      //Update device twin
+      this.updateDeviceTwin({
+        listeners: _defineProperty({}, eventName, {
+          type: 'background',
+          fileName: fileName
+        })
       });
     }
 
@@ -75,6 +91,11 @@ var IoTMonitor = function () {
     value: function addSameThreadMethodListener(eventName, method) {
       var _this2 = this;
 
+      if (!this.connected) {
+        throw new Error('Client is not connected while trying to add same thread listener');
+        return;
+      }
+
       this.methodListeners.push({
         type: 'same thread',
         eventNamae: eventName,
@@ -83,6 +104,14 @@ var IoTMonitor = function () {
 
       this.client.onDeviceMethod(eventName, function (res, req) {
         return _this2._runSameThreadCallBack(res, req, method);
+      });
+
+      //Update device twin
+      this.updateDeviceTwin({
+        listeners: {
+          type: 'same thread',
+          methodName: method.name
+        }
       });
     }
 
@@ -115,6 +144,59 @@ var IoTMonitor = function () {
         });
       });
     }
+  }, {
+    key: 'clearDeviceTwin',
+    value: function clearDeviceTwin() {
+      var _this4 = this;
+
+      return new Promise(function (res, rej) {
+        if (!_this4.connected) {
+          rej("Must be connected to clear device twin.");
+        }
+        _this4.client.getTwin(function (err, twin) {
+          if (err) {
+            rej(err);
+          } else {
+            var patch = {};
+            for (var prop in twin.properties.reported) {
+              patch[prop] = null;
+            }
+            delete patch.update;
+            delete patch.$version;
+
+            twin.properties.reported.update(patch, function (err) {
+              if (err) {
+                rej(err);
+              }
+              res();
+            });
+          }
+        });
+      });
+    }
+  }, {
+    key: 'updateDeviceTwin',
+    value: function updateDeviceTwin(obj) {
+      var _this5 = this;
+
+      return new Promise(function (res, rej) {
+        if (!_this5.connected) {
+          rej("Must be connected to update device twin");
+        }
+        _this5.client.getTwin(function (err, twin) {
+          if (err) {
+            rej(err);
+          } else {
+            twin.properties.reported.update(obj, function (err) {
+              if (err) {
+                rej(err);
+              }
+              res();
+            });
+          }
+        });
+      });
+    }
 
     /**
      * Run a method on the same thread as the IoTMonitor.
@@ -129,30 +211,41 @@ var IoTMonitor = function () {
     key: 'runOnSameThread',
     value: function runOnSameThread(method, args) {
       var _arguments = arguments,
-          _this4 = this;
+          _this6 = this;
 
-      // Re-write console.log.
-      // This might be a really stupid way to do this.
-      // It also won't work if the method is asynchronous.  It will revert
-      // console.log before those methods run.
-      var consoleLog = console.log;
-      console.log = function () {
-        var logs = _arguments;
-        if (_this4.connected) {
-          _this4.client.sendEvent(new Message('Log from ' + method.name + ': ' + logs));
+      //Update device twin
+      this.updateDeviceTwin({
+        runningOnThread: method.name,
+        encounteredError: _defineProperty({}, method.name, null)
+      }).then(function () {
+
+        // Re-write console.log.
+        // This might be a really stupid way to do this.
+        // It also won't work if the method is asynchronous.  It may revert
+        // console.log before those callbacks run.
+        var consoleLog = console.log;
+        console.log = function () {
+          var logs = _arguments;
+          if (_this6.connected) {
+            _this6.client.sendEvent(new Message('Log from ' + method.name + ': ' + logs));
+          }
+          consoleLog(_arguments);
+        };
+        try {
+          method.apply(undefined, _toConsumableArray(args));
+        } catch (e) {
+          if (_this6.connected) {
+            _this6.client.sendEvent(new Message('Error in ' + method.name + ': ' + e));
+            consoleLog(e);
+            //Update device twin
+          }
+        } finally {
+          console.log = consoleLog;
+          //Update device twin
         }
-        consoleLog(_arguments);
-      };
-      try {
-        method.apply(undefined, _toConsumableArray(args));
-      } catch (e) {
-        if (this.connected) {
-          this.client.sendEvent(new Message('Error in ' + method.name + ': ' + e));
-          consoleLog(e);
-        }
-      } finally {
-        console.log = consoleLog;
-      }
+      }).catch(function (e) {
+        return console.error(e);
+      });
     }
 
     /**
@@ -164,14 +257,12 @@ var IoTMonitor = function () {
   }, {
     key: 'forkProcess',
     value: function forkProcess(fileName) {
-      var _this5 = this;
+      var _this7 = this;
 
       if (!this.connected) {
         console.error('Client not connected while forking process');
       } else {
-        console.log('Here');
         this.client.sendEvent(new Message('Forking ' + fileName));
-        console.log('And there');
       }
 
       var forked = void 0;
@@ -186,13 +277,23 @@ var IoTMonitor = function () {
         return false;
       }
 
+      //Update device twin
+      // TODO add something better to store in each property.
+      this.updateDeviceTwin({
+        runningInBackground: _defineProperty({}, path.basename(fileName, '.js'), fileName),
+        encounteredError: _defineProperty({}, path.basename(fileName, '.js'), null)
+      });
+
       forked.on('error', function (error) {
-        if (_this5.connected) {
-          _this5.client.sendEvent(new Message('Error forking ' + fileName + ': ' + error.toString()), function (err) {
+        if (_this7.connected) {
+          _this7.client.sendEvent(new Message('Error forking ' + fileName + ': ' + error.toString()), function (err) {
             return IoTMonitor._handleMessageSendError;
           });
         }
         console.error('Error forking ' + fileName, error);
+        _this7.updateDeviceTwin({
+          runningInBackground: _defineProperty({}, path.basename(fileName, '.js'), null)
+        });
         return false;
       });
 
@@ -202,24 +303,30 @@ var IoTMonitor = function () {
       });
 
       forked.on('exit', function (code, signal) {
-        if (_this5.connected) {
-          _this5.client.sendEvent(new Message(fileName + ' ended on code ' + code), function (err) {
+        if (_this7.connected) {
+          _this7.client.sendEvent(new Message(fileName + ' ended on code ' + code), function (err) {
             return IoTMonitor._handleMessageSendError;
           });
         }
         console.log(fileName + ' ended');
+        _this7.updateDeviceTwin({
+          runningInBackground: _defineProperty({}, path.basename(fileName, '.js'), null)
+        });
       });
 
       if (this.connected) {
         forked.stdout.on('data', function (data) {
-          _this5.client.sendEvent(new Message('Message from ' + fileName + ': ' + data.toString()), function (err) {
+          _this7.client.sendEvent(new Message('Message from ' + fileName + ': ' + data.toString()), function (err) {
             return IoTMonitor._handleMessageSendError;
           });
         });
 
         forked.stderr.on('data', function (data) {
-          _this5.client.sendEvent(new Message('Error in ' + fileName + ': ' + data.toString), function (err) {
+          _this7.client.sendEvent(new Message('Error in ' + fileName + ': ' + data.toString), function (err) {
             return IoTMonitor._handleMessageSendError;
+          });
+          _this7.updateDeviceTwin({
+            encounteredError: _defineProperty({}, path.basename(fileName, '.js'), fileName)
           });
         });
       }
