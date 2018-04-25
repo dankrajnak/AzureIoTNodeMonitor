@@ -238,10 +238,16 @@ var IoTMonitor = function () {
             _this6.client.sendEvent(new Message('Error in ' + method.name + ': ' + e));
             consoleLog(e);
             //Update device twin
+            _this6.updateDeviceTwin({
+              encounteredError: _defineProperty({}, method.name, method.name)
+            });
           }
         } finally {
           console.log = consoleLog;
           //Update device twin
+          _this6.updateDeviceTwin({
+            runningOnThread: null
+          });
         }
       }).catch(function (e) {
         return console.error(e);

@@ -190,12 +190,18 @@ export default class IoTMonitor{
            this.client.sendEvent(new Message(`Error in ${method.name}: ${e}`));
            consoleLog(e);
            //Update device twin
-
+           this.updateDeviceTwin({
+             encounteredError:{
+               [method.name]: method.name
+             }
+           })
          }
        } finally{
          console.log = consoleLog;
          //Update device twin
-
+         this.updateDeviceTwin({
+           runningOnThread: null
+         });
        }
     }).catch((e)=>console.error(e))
   }
