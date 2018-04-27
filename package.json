@@ -13,9 +13,10 @@
   "dependencies": {
     "azure-iot-device": "^1.4.1",
     "azure-iot-device-mqtt": "^1.4.1",
+    "esdoc": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0",
     "npm": "^5.8.0",
-    "path": "^0.12.7",
-    "yargs": "^11.0.0"
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",

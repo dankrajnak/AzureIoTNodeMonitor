@@ -1,0 +1,1177 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "app/.external-ecmascript.js",
+    "static": true,
+    "longname": "app/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "app/IoTMonitor.js",
+    "content": "const {fork, execSync} = require('child_process');\nconst Client = require('azure-iot-device').Client;\nconst ConnectionString = require('azure-iot-device').ConnectionString;\nconst Message = require('azure-iot-device').Message;\nconst Protocol = require('azure-iot-device-mqtt').Mqtt;\nconst path = require('path');\n\nif (process.env.NODE_ENV !== 'production') {\n  require('dotenv').load();\n}\n\nexport default class IoTMonitor{\n  constructor(connectionString = false){\n    this.methodListeners = [];\n    this.backProcessesRunning = [];\n    this.connectionString = connectionString || process.env['AzureIoTHubDeviceConnectionString'];\n    this.client = null;\n    this.connected = false;\n  }\n\n  /**\n   * Listens for an `eventName` device method.  Once received, create a new instance\n   * of node running in a seperate process and run `fileName`. All output from\n   * that process will be sent to the IoTHub as an event.\n   *\n   * @param {string} eventName Name of event to listen to from the IotHub\n   * @param {string} fileName  Relative path to the javascript file\n   */\n  addRunInBackgroundListener(eventName, fileName){\n    if(!this.connected){\n      throw new Error('Client is not connected while trying to add background listener');\n      return;\n    }\n\n    this.methodListeners.push({\n      type: 'background',\n      eventName: eventName,\n      fileName: fileName\n    });\n    this.client.onDeviceMethod(eventName, (res, req)=>this._forkProcessCallback(res, req, fileName));\n\n    //Update device twin\n    this.updateDeviceTwin({\n      listeners: {\n        [eventName]: {\n          type: 'background',\n          fileName: fileName\n        }\n      }\n    });\n  }\n\n  /**\n   * Listens for an `eventName` device method.  Once received, runs the provided\n   * method in the same thread as the IoT Monitor.  This is meant for short methods\n   * and avoids the creation of a separate process.  Consider, though, that while\n   * the method is running, IoTMonitor will be unresponsive.\n   * @param {string} eventName  name of the device method to listen for\n   * @param {function} method    method to run on reciept of the eventName\n   */\n  addSameThreadMethodListener(eventName, method){\n    if(!this.connected){\n      throw new Error('Client is not connected while trying to add same thread listener');\n      return;\n    }\n\n    this.methodListeners.push({\n      type: 'same thread',\n      eventNamae: eventName,\n      method: method\n    });\n\n    this.client.onDeviceMethod(eventName, (res, req)=>this._runSameThreadCallBack(res, req, method));\n\n    //Update device twin\n    this.updateDeviceTwin({\n      listeners:{\n        type: 'same thread',\n        methodName: method.name\n      }\n    });\n  }\n\n  /**\n   * Connect to Azure IoTHub\n   * @return {Promise} A promise that resolves when successfully connected, and\n   *  rejects with any errors encountered.\n   */\n  connect(){\n    return new Promise((resolve, reject)=>{\n      try{\n        this.client = Client.fromConnectionString(this.connectionString, Protocol);\n      } catch(e){\n        reject(e);\n      }\n      this.client.open((err)=>{\n        if(err){\n          reject(err);\n        } else{\n          this.connected = true;\n          this.client.sendEvent(new Message('Connected!'));\n          console.log('Connected!')\n          resolve();\n        }\n      })\n    })\n  }\n\n  clearDeviceTwin(){\n    return new Promise((res, rej)=>{\n      if(!this.connected){\n        rej(\"Must be connected to clear device twin.\");\n      }\n      this.client.getTwin((err, twin)=>{\n        if(err){\n          rej(err);\n        } else{\n          let patch = {};\n          for (let prop in twin.properties.reported){\n            patch[prop] = null;\n          }\n          delete patch.update\n          delete patch.$version\n\n          twin.properties.reported.update(patch, (err)=>{\n            if(err){\n              rej(err);\n            }\n            res();\n          });\n        }\n      })\n    })\n  }\n\n  updateDeviceTwin(obj){\n    return new Promise((res, rej)=>{\n      if(!this.connected){\n        rej(\"Must be connected to update device twin\")\n      }\n      this.client.getTwin((err, twin)=>{\n        if(err){\n          rej(err);\n        } else{\n          twin.properties.reported.update(obj, (err)=>{\n            if(err){\n              rej(err);\n            }\n            res();\n          })\n        }\n      })\n    })\n  }\n\n  /**\n   * Run a method on the same thread as the IoTMonitor.\n   * Meant for simple, synchronous methods which quickly terminate.\n   * Avoids creating another Node instance.\n   *\n   * @param  {function} method method to be run on the same thread.\n   * @param  {Array} args   Parameters to be passed into the method.\n   */\n  runOnSameThread(method, args){\n\n    //Update device twin\n    this.updateDeviceTwin({\n      runningOnThread: method.name,\n      encounteredError: {\n        [method.name]: null\n      }\n    }).then(()=>{\n\n      // Re-write console.log.\n      // This might be a really stupid way to do this.\n      // It also won't work if the method is asynchronous.  It may revert\n      // console.log before those callbacks run.\n       let consoleLog = console.log;\n       console.log = ()=>{\n         let logs = arguments;\n         if(this.connected){\n           this.client.sendEvent(new Message(`Log from ${method.name}: ${logs}`));\n         }\n       }\n       try {\n         method(...args);\n       } catch (e) {\n         if(this.connected){\n           this.client.sendEvent(new Message(`Error in ${method.name}: ${e}`));\n           console.error(e);\n           //Update device twin\n           this.updateDeviceTwin({\n             encounteredError:{\n               [method.name]: method.name\n             }\n           })\n         }\n       } finally{\n         console.log = consoleLog;\n         //Update device twin\n         this.updateDeviceTwin({\n           runningOnThread: null\n         });\n       }\n    }).catch((e)=>console.error(e))\n  }\n\n  /**\n   * Creates a new instance of node and runs the fileName on this new instance.\n   * Reports any output of this process to the Azure IoTHub.\n   * @param  {string} fileName absolute path to the node script to be forked.\n   */\n  forkProcess(fileName){\n    if(!this.connected){\n      console.error('Client not connected while forking process');\n    } else{\n      this.client.sendEvent(new Message('Forking '+fileName));\n    }\n\n    let forked;\n\n    try{\n      forked = fork(fileName, [], { silent: true });\n    }\n    catch(error){\n      if(this.connected){\n        this.client.sendEvent(new Message('Error forking '+fileName+\": \"+error))\n      }\n      console.error('Error forking '+fileName, error);\n      return false;\n    }\n\n    //Update device twin\n    this.updateDeviceTwin({\n      runningInBackground: { [path.basename(fileName, '.js')]: fileName},\n      encounteredError: { [path.basename(fileName, '.js')]: null}\n    })\n\n    forked.on('error', (error)=>{\n      if(this.connected){\n        this.client.sendEvent(new Message(`Error forking ${fileName}: ${error.toString()}`),\n         (err)=>IoTMonitor._handleMessageSendError);\n      }\n      console.error('Error forking '+ fileName, error)\n      this.updateDeviceTwin({\n        runningInBackground: {\n          [path.basename(fileName, '.js')]: null\n        }\n      })\n      return false;\n    })\n\n    this.backProcessesRunning.push({\n      fileName: fileName,\n      fork: forked\n    })\n\n    forked.on('exit', (code, signal)=>{\n      if(this.connected){\n        this.client.sendEvent(new Message(`${fileName} ended on code ${code}`),\n          (err)=>IoTMonitor._handleMessageSendError);\n      }\n      console.log(fileName + ' ended');\n      this.updateDeviceTwin({\n        runningInBackground: {\n          [path.basename(fileName, '.js')]: null\n        }\n      })\n    })\n\n    if(this.connected){\n      forked.stdout.on('data', (data)=>{\n        this.client.sendEvent(new Message(`Message from ${fileName}: ${data.toString()}`),\n         (err)=>IoTMonitor._handleMessageSendError)\n      });\n\n      forked.stderr.on('data', (data)=>{\n        this.client.sendEvent(new Message(`Error in ${fileName}: ${data.toString}`),\n         (err)=>IoTMonitor._handleMessageSendError)\n        this.updateDeviceTwin({\n          encounteredError:{\n            [path.basename(fileName, '.js')]: fileName\n          }\n        })\n      });\n    }\n    return true;\n  }\n\n  _forkProcessCallback(request, response, fileName){\n    console.log('Got message to fork ' + fileName);\n    if(this.forkProcess(fileName)){\n      response.send(200, 'Successfully forked ' + fileName, (err)=>{\n        if (err){\n          IoTMonitor._handleMessageSendError(err);\n        }\n      })\n    } else{\n      response.send(500, 'Error Forking ' + fileName, (err)=>{\n        if(err){\n          IoTMonitor._handleMessageSendError(err);\n        }\n      })\n    }\n  }\n\n  _runOnSameThreadCallback(request, response, method){\n    console.log('Got message to run '+ method.name+'('+request.payload||''+')')\n\n    if(this.runOnSameThread(method, request.payload)){\n      response.send(200, 'Successfully ran '+method.name+'('+request.payload||''+')', (err)=>{\n        if (err){\n          IoTMonitor._handleMessageSendError(err);\n        }\n      })\n    } else{\n      response.send(500, 'Error running ' + method.name, (err)=>{\n        if(err){\n          IoTMonitor._handleMessageSendError(err);\n        }\n      })\n    }\n  }\n\n  static _handleMessageSendError(error){\n    console.error(error);\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/danielkrajnak/Documents/Code/Heartfelt/IoTMonitor/app/IoTMonitor.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "fork",
+    "memberof": "app/IoTMonitor.js",
+    "static": true,
+    "longname": "app/IoTMonitor.js~fork",
+    "access": "public",
+    "export": false,
+    "importPath": "iotmonitor/app/IoTMonitor.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "Client",
+    "memberof": "app/IoTMonitor.js",
+    "static": true,
+    "longname": "app/IoTMonitor.js~Client",
+    "access": "public",
+    "export": false,
+    "importPath": "iotmonitor/app/IoTMonitor.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "name": "ConnectionString",
+    "memberof": "app/IoTMonitor.js",
+    "static": true,
+    "longname": "app/IoTMonitor.js~ConnectionString",
+    "access": "public",
+    "export": false,
+    "importPath": "iotmonitor/app/IoTMonitor.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "variable",
+    "name": "Message",
+    "memberof": "app/IoTMonitor.js",
+    "static": true,
+    "longname": "app/IoTMonitor.js~Message",
+    "access": "public",
+    "export": false,
+    "importPath": "iotmonitor/app/IoTMonitor.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "variable",
+    "name": "Protocol",
+    "memberof": "app/IoTMonitor.js",
+    "static": true,
+    "longname": "app/IoTMonitor.js~Protocol",
+    "access": "public",
+    "export": false,
+    "importPath": "iotmonitor/app/IoTMonitor.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "variable",
+    "name": "path",
+    "memberof": "app/IoTMonitor.js",
+    "static": true,
+    "longname": "app/IoTMonitor.js~path",
+    "access": "public",
+    "export": false,
+    "importPath": "iotmonitor/app/IoTMonitor.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "class",
+    "name": "IoTMonitor",
+    "memberof": "app/IoTMonitor.js",
+    "static": true,
+    "longname": "app/IoTMonitor.js~IoTMonitor",
+    "access": "public",
+    "export": true,
+    "importPath": "iotmonitor/app/IoTMonitor.js",
+    "importStyle": "IoTMonitor",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 56,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "methodListeners",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#methodListeners",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "backProcessesRunning",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#backProcessesRunning",
+    "access": "public",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "connectionString",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#connectionString",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "member",
+    "name": "client",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#client",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "member",
+    "name": "connected",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#connected",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "addRunInBackgroundListener",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#addRunInBackgroundListener",
+    "access": "public",
+    "description": "Listens for an `eventName` device method.  Once received, create a new instance\nof node running in a seperate process and run `fileName`. All output from\nthat process will be sent to the IoTHub as an event.",
+    "lineNumber": 29,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "eventName",
+        "description": "Name of event to listen to from the IotHub"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fileName",
+        "description": "Relative path to the javascript file"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "addSameThreadMethodListener",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#addSameThreadMethodListener",
+    "access": "public",
+    "description": "Listens for an `eventName` device method.  Once received, runs the provided\nmethod in the same thread as the IoT Monitor.  This is meant for short methods\nand avoids the creation of a separate process.  Consider, though, that while\nthe method is running, IoTMonitor will be unresponsive.",
+    "lineNumber": 61,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "eventName",
+        "description": "name of the device method to listen for"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "method",
+        "description": "method to run on reciept of the eventName"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "connect",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#connect",
+    "access": "public",
+    "description": "Connect to Azure IoTHub",
+    "lineNumber": 89,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "A promise that resolves when successfully connected, and\n rejects with any errors encountered."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "clearDeviceTwin",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#clearDeviceTwin",
+    "access": "public",
+    "description": null,
+    "lineNumber": 109,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "updateDeviceTwin",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#updateDeviceTwin",
+    "access": "public",
+    "description": null,
+    "lineNumber": 136,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "runOnSameThread",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#runOnSameThread",
+    "access": "public",
+    "description": "Run a method on the same thread as the IoTMonitor.\nMeant for simple, synchronous methods which quickly terminate.\nAvoids creating another Node instance.",
+    "lineNumber": 164,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "method",
+        "description": "method to be run on the same thread."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "args",
+        "description": "Parameters to be passed into the method."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "forkProcess",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#forkProcess",
+    "access": "public",
+    "description": "Creates a new instance of node and runs the fileName on this new instance.\nReports any output of this process to the Azure IoTHub.",
+    "lineNumber": 213,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fileName",
+        "description": "absolute path to the node script to be forked."
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "_forkProcessCallback",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#_forkProcessCallback",
+    "access": "private",
+    "description": null,
+    "lineNumber": 290,
+    "undocument": true,
+    "params": [
+      {
+        "name": "request",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "response",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "fileName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "_runOnSameThreadCallback",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/IoTMonitor.js~IoTMonitor#_runOnSameThreadCallback",
+    "access": "private",
+    "description": null,
+    "lineNumber": 307,
+    "undocument": true,
+    "params": [
+      {
+        "name": "request",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "response",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "method",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "_handleMessageSendError",
+    "memberof": "app/IoTMonitor.js~IoTMonitor",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/IoTMonitor.js~IoTMonitor._handleMessageSendError",
+    "access": "private",
+    "description": null,
+    "lineNumber": 325,
+    "undocument": true,
+    "params": [
+      {
+        "name": "error",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 74,
+    "kind": "file",
+    "name": "app/index.js",
+    "content": "import IoTMonitor from './IoTMonitor';\n\nlet monitor = new IoTMonitor();\nmonitor.connect().then(()=>{\n  monitor.clearDeviceTwin();\n  monitor.addRunInBackgroundListener('repeat', 'build/repeater.js');\n  monitor.forkProcess('build/repeater.js');\n})\n",
+    "static": true,
+    "longname": "/Users/danielkrajnak/Documents/Code/Heartfelt/IoTMonitor/app/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 75,
+    "kind": "variable",
+    "name": "monitor",
+    "memberof": "app/index.js",
+    "static": true,
+    "longname": "app/index.js~monitor",
+    "access": "public",
+    "export": false,
+    "importPath": "iotmonitor/app/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "app/IoTMonitor.js~IoTMonitor"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "file",
+    "name": "app/repeater.js",
+    "content": "console.log('HELLO THERE! THIS IS LOG OF A STRING');\nsetTimeout(()=>console.log('ANOTHER MESSAGE!', {and: 'An object'}), 5000);\n",
+    "static": true,
+    "longname": "/Users/danielkrajnak/Documents/Code/Heartfelt/IoTMonitor/app/repeater.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# Azure IoT Monitor\nRun and monitor multiple node scripts using Azure IoT Hub.\n\n## API\n\n### Constructor\n```Javascript\nnew IoTMonitor([connectionString])\n```\n* `connectionString {string}` — the device connection string to connect with the Azure IoT Hub.  Learn how to to connect your device to Azure [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-device-management-get-started).  If no connection string is provided, IoTMonitor will check environment variables.\n\n### Methods\n```javascript\n  connect()\n```\n`Returns a Promise.` Connect to the Azure IoT Hub.\n\n\n```Javascript\naddRunInBackgroundListener(eventName, fileName)\n```\nWhen the device receives a `Direct Method` message from Azure, it will fork another node instance and run `filename`.  All of the output from the forked process will be sent back to the IoTHub.\n\n* `eventName {string}` the name of the direct method to listen for\n\n* `fileName {string}` the absolute path to the file to be run.\n\n```Javascript\naddSameThreadMethodListener(eventName, method)\n```\n\nWhen the devices receives a `Direct Method` message from Azure, it will run the `method` provided and send all logs from the method to the IoTHub.  \n\n* `eventName {string}` the name of the direct method to listen for\n\n* `method {function}` the method to run\n\n```Javascript\n  forkProcess(fileName)\n```\n\nFork a new node instance and run `fileName`.  All output from the process will be sent to the IoT Hub.\n\n* `fileName {string}` the absolute path to the file to be run.\n\n```javascript\nrunOnSameThread(method, args)\n```\n\nRun `method(args)` and send all logs and errors to the IoT Hub.\n\n* `method {function}` the method to run\n\n* `args {Array}` An array of parameters to be passed into the method\n",
+    "longname": "/Users/danielkrajnak/Documents/Code/Heartfelt/IoTMonitor/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"iotmonitor\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Monitor the execution of node.js programs on iotdevices\",\n  \"main\": \"./build/index.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n    \"build\": \"babel ./app -d build\",\n    \"build:watch\": \"babel ./app -d build --watch\"\n  },\n  \"author\": \"Daniel Krajnak\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"azure-iot-device\": \"^1.4.1\",\n    \"azure-iot-device-mqtt\": \"^1.4.1\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"npm\": \"^5.8.0\",\n    \"path\": \"^0.12.7\"\n  },\n  \"devDependencies\": {\n    \"babel-preset-env\": \"^1.6.1\",\n    \"dotenv\": \"^5.0.1\"\n  }\n}\n",
+    "longname": "/Users/danielkrajnak/Documents/Code/Heartfelt/IoTMonitor/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

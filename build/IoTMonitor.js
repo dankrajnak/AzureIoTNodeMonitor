@@ -229,14 +229,13 @@ var IoTMonitor = function () {
           if (_this6.connected) {
             _this6.client.sendEvent(new Message('Log from ' + method.name + ': ' + logs));
           }
-          consoleLog(_arguments);
         };
         try {
           method.apply(undefined, _toConsumableArray(args));
         } catch (e) {
           if (_this6.connected) {
             _this6.client.sendEvent(new Message('Error in ' + method.name + ': ' + e));
-            consoleLog(e);
+            console.error(e);
             //Update device twin
             _this6.updateDeviceTwin({
               encounteredError: _defineProperty({}, method.name, method.name)
@@ -284,7 +283,6 @@ var IoTMonitor = function () {
       }
 
       //Update device twin
-      // TODO add something better to store in each property.
       this.updateDeviceTwin({
         runningInBackground: _defineProperty({}, path.basename(fileName, '.js'), fileName),
         encounteredError: _defineProperty({}, path.basename(fileName, '.js'), null)

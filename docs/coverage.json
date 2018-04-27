@@ -1,0 +1,38 @@
+{
+  "coverage": "20.83%",
+  "expectCount": 24,
+  "actualCount": 5,
+  "files": {
+    "app/IoTMonitor.js": {
+      "expectCount": 23,
+      "actualCount": 5,
+      "undocumentLines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        109,
+        136,
+        290,
+        307,
+        325
+      ]
+    },
+    "app/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    }
+  }
+}
